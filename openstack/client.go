@@ -355,6 +355,8 @@ func NewIdentityV3(client *gophercloud.ProviderClient, eo gophercloud.EndpointOp
 }
 
 func initClientOpts(client *gophercloud.ProviderClient, eo gophercloud.EndpointOpts, clientType string) (*gophercloud.ServiceClient, error) {
+	cblogger.Infof("# ServiceClient Type : [%s]", clientType)
+
 	sc := new(gophercloud.ServiceClient)
 	eo.ApplyDefaults(clientType)
 	url, err := client.EndpointLocator(eo)
@@ -366,9 +368,8 @@ func initClientOpts(client *gophercloud.ProviderClient, eo gophercloud.EndpointO
 	sc.Endpoint = url
 	sc.Type = clientType
 
-	cblogger.Infof("\n# ServiceClient Type and Endpoint : [%s] : [%s]", sc.Type, sc.Endpoint)
-	cblogger.Info("\n\n")
-
+	cblogger.Infof("# Endpoint for the ClientType: [%s]\n", sc.Endpoint)
+	
 	return sc, nil
 }
 
