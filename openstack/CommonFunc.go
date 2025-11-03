@@ -11,21 +11,7 @@
 package openstack
 
 import (
-	"sync"
-
 	"github.com/sirupsen/logrus"
-	cblog "github.com/cloud-barista/cb-log"
-	call "github.com/cloud-barista/cb-spider/cloud-control-manager/cloud-driver/call-log"	
 )
 
-var once sync.Once
 var cblogger *logrus.Logger
-var calllogger *logrus.Logger
-
-func InitLog() {
-	once.Do(func() {
-		// cblog is a global variable.
-		cblogger = cblog.GetLogger("CB-SPIDER")
-		calllogger = call.GetLogger("HISCALL")
-	})
-}
