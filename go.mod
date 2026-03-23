@@ -4,7 +4,7 @@ go 1.25.0
 
 require (
 	github.com/cloud-barista/cb-log v0.9.0
-	github.com/gophercloud/gophercloud/v2 v2.8.0
+	github.com/gophercloud/gophercloud/v2 v2.11.1
 	github.com/sirupsen/logrus v1.9.3
 	golang.org/x/crypto v0.38.0
 	gopkg.in/yaml.v2 v2.4.0
